@@ -2,6 +2,7 @@ import  streamlit as st
 import numpy as np 
 import pandas as pd 
 import requests
+import openai
 
 from streamlit_chat import message
 from streamlit_lottie import st_lottie
@@ -22,6 +23,16 @@ def get_text():
 
 animation = load_lottee(lotte_file = lotte_file)
 
+def get_completion(prompt, model="gpt-3.5-turbo"):
+    messages = [{"role": "user", "content": prompt}]
+    response = openai.ChatCompletion.create(
+        model=model,
+        messages=messages,
+        temperature=.6, # this is the degree of randomness of the model's output
+    )
+    # print('response we got from the apis is ',response)
+    # print('***********************************************************')
+    return response.choices[0].message["content"]
 
 # HEADER section
 
