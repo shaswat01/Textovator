@@ -115,8 +115,8 @@ with st.container():
         st.write(get_completion(prompt))
     
     clear_button = st.button("Clear All", key="clear")    
-        if clear_button:
-            st.experimental_rerun()
+    if clear_button:
+        st.experimental_rerun()
 
 with st.container():
     st.write('---')
