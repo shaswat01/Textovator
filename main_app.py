@@ -161,9 +161,9 @@ with st.container():
     #st.write('value for the final prompt is ',prompt )
     with right:
         clear_button = st.button("Clear All", key="clear") 
-        
+    
+    promp_ans = get_completion(prompt)
     if submit_prompt:
-        promp_ans = get_completion(prompt)
         st.write(promp_ans)
         appr = st.button('Submit for Approval')
         if appr:
