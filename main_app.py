@@ -163,10 +163,11 @@ with st.container():
         clear_button = st.button("Clear All", key="clear") 
         
     if submit_prompt:
-        st.write(get_completion(prompt))
-    appr = st.button('Submit for Approval')
-    if appr:
-        st.success('Submitted for Approval!')
+        promp_ans = get_completion(prompt)
+        st.write(promp_ans)
+        appr = st.button('Submit for Approval')
+        if appr:
+            st.success('Submitted for Approval!')
     if clear_button:
         st.experimental_rerun()
         
