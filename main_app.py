@@ -65,6 +65,7 @@ with st.container():
         n_city = st.text_input('Nearest major City: ')
         left_lst= []
         if n_bedrooms.isnumeric():
+            
             left_lst.append(f"""Number of Bedrooms={n_bedrooms}""")
         if n_baths.isnumeric():
             left_lst.append(f"""Number of bathrooms={n_baths}""")
@@ -72,7 +73,9 @@ with st.container():
             left_lst.append(f"""Number of beds={n_beds}""")
         if n_city.isalpha():
             left_lst.append(f"""nearest city={n_city}""")
-        st.write(left_lst)
+            
+        left_selected_options_string = ', '.join(left_lst)
+        st.write(left_selected_options_string)
     with center: 
         st.write('Please select the following options: ')
 #         woods = st.checkbox('In Woods')
@@ -115,7 +118,7 @@ with st.container():
         # Convert the selected options to a string
         right_selected_options_string = ', '.join(right_selected_val)
         
-    st.write(right_selected_options_string + ', ' + center_selected_options_string + ', ' +  left_lst)
+    st.write(right_selected_options_string + ', ' + center_selected_options_string + ', ' +  left_selected_options_string)
         
 with st.container():
 
