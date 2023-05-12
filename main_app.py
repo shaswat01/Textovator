@@ -107,7 +107,7 @@ with st.container():
         # Convert the selected options to a string
         right_selected_options_string = ', '.join(right_selected_val)
         
-    st.write(right_selected_options_string + ', ' + center_selected_options_string,+ ', '+ , n_bedrooms,+ ', '+ ,n_baths,+ ', '+ ,n_beds,+ ', '+ ,n_city)
+    st.write(right_selected_options_string + ', ' + center_selected_options_string + ', ' +  n_bedrooms+ ', '+ ,n_baths+ ', '+ ,n_beds+ ', '+ n_city)
         
 with st.container():
 
