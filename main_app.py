@@ -87,32 +87,32 @@ with st.container():
         tv = st.checkbox('Television')
 
 
-st.button('Submit')
-if st.button:
-    prop_description = "In Woods, Number of bedrooms=3, Number of bathrooms=2, NUmber of beds=6, Close to Sea, Close to Mountains, \
-    Nearest major city =Miami, Sea Facing, Air Conditioning, Heating, Bathtub,Patio/Balcony, Pets allowed, Building elevator,\
-    Free parking, Concierge Services,Waterfront, pool, In Person Checkin, Kids Amenities, 24/7 Support, Professional Cleaning, \
-    Pre and post stay, High-Speed WiFi, Kitchen Essentials, Cookware, Utensils, Microwave, Starter Kit of Bathroom Amenities, \
-    Soap, Shampoo, Hair Dryer, Premium Linens and Towels, Television"
+    st.button('Submit')
+    if st.button:
+        prop_description = "In Woods, Number of bedrooms=3, Number of bathrooms=2, NUmber of beds=6, Close to Sea, Close to Mountains, \
+        Nearest major city =Miami, Sea Facing, Air Conditioning, Heating, Bathtub,Patio/Balcony, Pets allowed, Building elevator,\
+        Free parking, Concierge Services,Waterfront, pool, In Person Checkin, Kids Amenities, 24/7 Support, Professional Cleaning, \
+        Pre and post stay, High-Speed WiFi, Kitchen Essentials, Cookware, Utensils, Microwave, Starter Kit of Bathroom Amenities, \
+        Soap, Shampoo, Hair Dryer, Premium Linens and Towels, Television"
 
-    prompt = f"""
-    You are an Assistant for text generation designed to help get \
-    the text generated with given properties attributes delimited by ```.
+        prompt = f"""
+        You are an Assistant for text generation designed to help get \
+        the text generated with given properties attributes delimited by ```.
 
-    Instructions: 
-    - Make the tone as Persuasive 
-    - If the city details are present in the text, share some fun acitivities around that area \
-    or a fun fact about the city in the property description.
-    - Show the output JSON
-        - Property Description = Generate a detailed 600 words property description that highlights its unique features and appeals to \
-          potential renters.
-        - Headline = Generate a SEO and eye catching headline. 
-    - If you're unsure of an answer, you can say "I don't know" or "I'm not sure". 
+        Instructions: 
+        - Make the tone as Persuasive 
+        - If the city details are present in the text, share some fun acitivities around that area \
+        or a fun fact about the city in the property description.
+        - Show the output JSON
+            - Property Description = Generate a detailed 600 words property description that highlights its unique features and appeals to \
+              potential renters.
+            - Headline = Generate a SEO and eye catching headline. 
+        - If you're unsure of an answer, you can say "I don't know" or "I'm not sure". 
 
-    - properties attributes: ```{prop_description}```
-    """        
+        - properties attributes: ```{prop_description}```
+        """        
 
-    st.write(get_completion(prompt))
+        st.write(get_completion(prompt))
 
 with st.container():
     st.write('---')
