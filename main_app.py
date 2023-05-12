@@ -97,10 +97,10 @@ with st.container():
         right_lst = ['Pool','Concierge Service']
     
         right_selected_val =[]
-            for option in right_lst:
-                checkbox = st.checkbox(option)
-                if checkbox:
-                    right_selected_val.append(option)
+        for option in right_lst:
+            checkbox = st.checkbox(option)
+            if checkbox:
+                right_selected_val.append(option)
 
         # Convert the selected options to a string
         selected_options_string = ', '.join(right_selected_val)
