@@ -91,7 +91,7 @@ with st.container():
 
     left,center,right = st.columns((1,2,2))
     with left:
-        st.button('Submit')
+        submit = st.button('Submit')
     prop_description = "In Woods, Number of bedrooms=3, Number of bathrooms=2, NUmber of beds=6, Close to Sea, Close to Mountains, \
     Nearest major city =Miami, Sea Facing, Air Conditioning, Heating, Bathtub,Patio/Balcony, Pets allowed, Building elevator,\
     Free parking, Concierge Services,Waterfront, pool, In Person Checkin, Kids Amenities, 24/7 Support, Professional Cleaning, \
@@ -116,7 +116,7 @@ with st.container():
     """  
     with right:
         clear_button = st.button("Clear All", key="clear") 
-    if st.button:
+    if submit:
         st.write(get_completion(prompt))
 
 
