@@ -86,7 +86,7 @@ with st.container():
         prem = st.checkbox('Premium Linens and Towels')
         tv = st.checkbox('Television')
 
-
+    
     st.button('Submit')
     if st.button:
         prop_description = "In Woods, Number of bedrooms=3, Number of bathrooms=2, NUmber of beds=6, Close to Sea, Close to Mountains, \
@@ -113,6 +113,10 @@ with st.container():
         """        
 
         st.write(get_completion(prompt))
+    
+    clear_button = st.button("Clear All", key="clear")    
+        if clear_button:
+            st.experimental_rerun()
 
 with st.container():
     st.write('---')
