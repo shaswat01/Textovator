@@ -118,7 +118,7 @@ with st.container():
         # Convert the selected options to a string
         right_selected_options_string = ', '.join(right_selected_val)
         
-    st.write(right_selected_options_string + ', ' + center_selected_options_string + ', ' +  left_selected_options_string)
+    #st.write(right_selected_options_string + ', ' + center_selected_options_string + ', ' +  left_selected_options_string)
         
 with st.container():
 
@@ -131,7 +131,8 @@ with st.container():
     Free parking, Concierge Services,Waterfront, pool, In Person Checkin, Kids Amenities, 24/7 Support, Professional Cleaning, \
     Pre and post stay, High-Speed WiFi, Kitchen Essentials, Cookware, Utensils, Microwave, Starter Kit of Bathroom Amenities, \
     Soap, Shampoo, Hair Dryer, Premium Linens and Towels, Television"
-
+    prop_description = right_selected_options_string + ', ' + center_selected_options_string + ', ' +  left_selected_options_string
+    
     prompt = f"""
     You are an Assistant for text generation designed to help get \
     the text generated with given properties attributes delimited by ```.
@@ -148,6 +149,7 @@ with st.container():
 
     - properties attributes: ```{prop_description}```
     """  
+    st.write('value for the final prompt is ',prompt )
     with right:
         clear_button = st.button("Clear All", key="clear") 
         
