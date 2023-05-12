@@ -64,6 +64,7 @@ with st.container():
         n_baths = st.text_input('Number of Bathrooms: ')
         n_beds = st.text_input('Number of Beds: ')
         n_city = st.text_input('Nearest major City: ')
+        other_details = st.text_input('Other Details(comma separated: ')
         left_lst= []
         if n_bedrooms.isnumeric():
             
@@ -74,7 +75,8 @@ with st.container():
             left_lst.append(f"""Number of beds={n_beds}""")
         if n_city.isalpha():
             left_lst.append(f"""nearest city={n_city}""")
-            
+        if other_details:
+            left_lst.append(other_details)
         left_selected_options_string = ', '.join(left_lst)
         st.write(left_selected_options_string)
     with center: 
@@ -108,7 +110,7 @@ with st.container():
 #         kitchen = st.checkbox('Kitchen Essentials')
 #         prem = st.checkbox('Premium Linens and Towels')
 #         tv = st.checkbox('Television')
-        right_lst = ['Pool','Concierge Service','Kids Amenities','Professinal Cleaning','High Speed Wifi','Kitchen Essentials','Premium Linens and Towels','Television']
+        right_lst = ['Pool','Concierge Service','Kids Amenities','Professional Cleaning','High Speed Wifi','Kitchen Essentials','Premium Linens and Towels','Television','Newly built']
     
         right_selected_val =[]
         for option in right_lst:
@@ -143,9 +145,9 @@ with st.container():
     - If the city details are present in the text, share some fun acitivities around that area \
     or a fun fact about the city in the property description.
     - Show the output
+        - Headline = Generate a SEO and eye catching headline. 
         - Property Description = Generate a detailed 600 words property description that highlights its unique features and appeals to \
           potential renters.
-        - Headline = Generate a SEO and eye catching headline. 
     - If you're unsure of an answer, you can say "I don't know" or "I'm not sure". 
 
     - properties attributes: ```{prop_description}```
