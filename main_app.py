@@ -86,8 +86,12 @@ with st.container():
         prem = st.checkbox('Premium Linens and Towels')
         tv = st.checkbox('Television')
 
-    
-    st.button('Submit')
+        
+with st.container():
+
+    left,center,right = st.columns((1,2,2))
+    with left:
+        st.button('Submit')
     prop_description = "In Woods, Number of bedrooms=3, Number of bathrooms=2, NUmber of beds=6, Close to Sea, Close to Mountains, \
     Nearest major city =Miami, Sea Facing, Air Conditioning, Heating, Bathtub,Patio/Balcony, Pets allowed, Building elevator,\
     Free parking, Concierge Services,Waterfront, pool, In Person Checkin, Kids Amenities, 24/7 Support, Professional Cleaning, \
@@ -109,12 +113,13 @@ with st.container():
     - If you're unsure of an answer, you can say "I don't know" or "I'm not sure". 
 
     - properties attributes: ```{prop_description}```
-    """   
-    clear_button = st.button("Clear All", key="clear") 
+    """  
+    with right:
+        clear_button = st.button("Clear All", key="clear") 
     if st.button:
         st.write(get_completion(prompt))
-    
-  
+
+
     if clear_button:
         st.experimental_rerun()
 
