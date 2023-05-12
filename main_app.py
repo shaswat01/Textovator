@@ -90,8 +90,9 @@ with st.container():
 with st.container():
 
     left,center,right = st.columns((1,2,2))
+    
     with left:
-        submit = st.button('Submit')
+        submit_prompt = st.button('Submit')
     prop_description = "In Woods, Number of bedrooms=3, Number of bathrooms=2, NUmber of beds=6, Close to Sea, Close to Mountains, \
     Nearest major city =Miami, Sea Facing, Air Conditioning, Heating, Bathtub,Patio/Balcony, Pets allowed, Building elevator,\
     Free parking, Concierge Services,Waterfront, pool, In Person Checkin, Kids Amenities, 24/7 Support, Professional Cleaning, \
@@ -116,10 +117,9 @@ with st.container():
     """  
     with right:
         clear_button = st.button("Clear All", key="clear") 
-    if submit:
+        
+    if submit_prompt:
         st.write(get_completion(prompt))
-
-
     if clear_button:
         st.experimental_rerun()
 
@@ -144,7 +144,8 @@ with st.container():
                 st.session_state['messages'] = [
                     {"role": "system", "content": "You are a helpful assistant."} ]
             
-            with st.form(key='my_form', clear_on_submit=True):
+            with st.form(key='my_form', clear_on_
+                         =True):
                 user_input = st.text_area("You:", key='input', height=100)
                 submit_button = st.form_submit_button(label='Send')
 
