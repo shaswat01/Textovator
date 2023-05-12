@@ -127,11 +127,6 @@ with st.container():
     st.write('---')
     col1, col2, col3 = st.columns(3)
 
-    with col1:
-        clear_button = st.sidebar.button("Clear All", key="clear")    
-        if clear_button:
-            st.experimental_rerun()
-
     with col3:
         check = st.button('Help')
 
