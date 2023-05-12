@@ -166,27 +166,24 @@ with st.container():
 with st.container():
     st.write('---')
     col1, col2, col3 = st.columns(3)
-
     with col3:
-        check = st.button('Help')
+        st.subheader('Contact Us')
+        st.write('##')
 
-        if check:
-            if 'generated' not in st.session_state:
-                st.session_state['generated'] = []
-            if 'past' not in st.session_state:
-                st.session_state['past'] = []
-            if 'messages' not in st.session_state:
-                st.session_state['messages'] = [
-                    
-                    
-                    
-
-                    {"role": "system", "content": "You are a helpful assistant."} ]
-            
-            with st.form(key='my_form', clear_on_
-                         =True):
-                user_input = st.text_area("You:", key='input', height=100)
-                submit_button = st.form_submit_button(label='Send')
+        contact_form = """
+    <form action="https://formsubmit.co/your@email.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message here" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    """
+        left_column, right_column = st.columns(2)
+        with left_column:
+            st.markdown(contact_form, unsafe_allow_html=True)
+        with right_column:
+            st.empty()
 
 
 
