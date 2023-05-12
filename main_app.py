@@ -82,7 +82,7 @@ with st.container():
                 center_selected_val.append(option)
 
         # Convert the selected options to a string
-        selected_options_string = ', '.join(center_selected_val)
+        center_selected_options_string = ', '.join(center_selected_val)
 
     with right:
         st.write("##")
@@ -103,8 +103,9 @@ with st.container():
                 right_selected_val.append(option)
 
         # Convert the selected options to a string
-        selected_options_string = ', '.join(right_selected_val)
-    st.write(selected_options_string)
+        right_selected_options_string = ', '.join(right_selected_val)
+        
+    st.write(right_selected_options_string + center_selected_options_string)
         
 with st.container():
 
