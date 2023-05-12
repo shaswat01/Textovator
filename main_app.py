@@ -64,13 +64,13 @@ with st.container():
         n_city = st.text_input('Nearest major City: ')
         left_lst= []
         if n_bedrooms.isnumeric():
-            left_lst.append('Number of Bedrooms=',n_bedrooms)
+            left_lst.append(f"""Number of Bedrooms={n_bedrooms}""")
         if n_baths.isnumeric():
-            left_lst.append('Number of bathrooms=',n_baths)
+            left_lst.append(f"""Number of bathrooms={n_baths}""")
         if n_beds.isnumeric():
-            left_lst.append('Number of beds=',n_beds)
+            left_lst.append(f"""Number of beds={n_beds}""")
         if n_city.isalpha():
-            left_lst.append('nearest city=',n_city)
+            left_lst.append(f"""nearest city={n_city}""")
 
     with center: 
         st.write('Please select the following options: ')
