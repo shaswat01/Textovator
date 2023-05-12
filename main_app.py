@@ -59,33 +59,52 @@ with st.container():
 
     with left:
         n_beds = st.text_input('Number of Bedrooms: ')
-        n_baths = st.text_input('Number of BathRooms: ')
+        n_baths = st.text_input('Number of Bathrooms: ')
         n_beds = st.text_input('Number of Beds: ')
         n_city = st.text_input('Nearest major City: ')
 
     with center: 
         st.write('Please select the following options: ')
-        woods = st.checkbox('In Woods')
-        sea = st.checkbox('Close To Woods')
-        mount = st.checkbox('Close to Mountains')
-        sea_fac = st.checkbox('Sea Facing')
-        ac = st.checkbox('A/C')
-        heat = st.checkbox('Heating')
-        bathtub = st.checkbox('Bathtub')
-        pat =  st.checkbox('Patio/Balcony')
-        pets = st.checkbox('Pets Allowed')
+#         woods = st.checkbox('In Woods')
+#         sea = st.checkbox('Close To Woods')
+#         mount = st.checkbox('Close to Mountains')
+#         sea_fac = st.checkbox('Sea Facing')
+#         ac = st.checkbox('A/C')
+#         heat = st.checkbox('Heating')
+#         bathtub = st.checkbox('Bathtub')
+#         pat =  st.checkbox('Patio/Balcony')
+#         pets = st.checkbox('Pets Allowed')
+        center_lst = ['In Woods','Close to Mountains']
+        center_selected_val =[]
+        for option in center_lst:
+        checkbox = st.checkbox(option)
+        if checkbox:
+            center_selected_val.append(option)
+
+    # Convert the selected options to a string
+    selected_options_string = ', '.join(center_selected_val)
 
     with right:
         st.write("##")
-        pool =  st.checkbox('Pool')
-        concierge = st.checkbox('Concierge Service')
-        kids = st.checkbox('Kids Amenities')
-        clean = st.checkbox('Professinal Cleaning')
-        wifi = st.checkbox('High Speed Wifi')
-        kitchen = st.checkbox('Kitchen Essentials')
-        prem = st.checkbox('Premium Linens and Towels')
-        tv = st.checkbox('Television')
+#         pool =  st.checkbox('Pool')
+#         concierge = st.checkbox('Concierge Service')
+#         kids = st.checkbox('Kids Amenities')
+#         clean = st.checkbox('Professinal Cleaning')
+#         wifi = st.checkbox('High Speed Wifi')
+#         kitchen = st.checkbox('Kitchen Essentials')
+#         prem = st.checkbox('Premium Linens and Towels')
+#         tv = st.checkbox('Television')
+        right_lst = ['Pool','Concierge Service']
+    
+        right_selected_val =[]
+            for option in right_lst:
+            checkbox = st.checkbox(option)
+            if checkbox:
+                right_selected_val.append(option)
 
+        # Convert the selected options to a string
+        selected_options_string = ', '.join(right_selected_val)
+    st.write(selected_options_string)
         
 with st.container():
 
@@ -156,13 +175,7 @@ options = ['Option 1', 'Option 2', 'Option 3']
 selected_options = []
 
 # Display checkboxes for each option
-for option in options:
-    checkbox = st.checkbox(option)
-    if checkbox:
-        selected_options.append(option)
 
-# Convert the selected options to a string
-selected_options_string = ', '.join(selected_options)
 
 # Display the selected options as a string
 st.write('Selected options:', selected_options_string)
