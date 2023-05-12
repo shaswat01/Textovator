@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd 
 import requests
 import openai
+import pyautogui
 
 from streamlit_chat import message
 from streamlit_lottie import st_lottie
@@ -151,6 +152,7 @@ with st.container():
         st.write(get_completion(prompt))
     if clear_button:
         st.experimental_rerun()
+        pyautogui.hotkey('f5')
 
 with st.container():
     st.write('---')
