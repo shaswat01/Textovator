@@ -12,7 +12,7 @@ from streamlit_lottie import st_lottie
 openai.api_key = st.secrets["password"]
 
 # Page config
-st.set_page_config(page_title = "TextoVator", page_icon = ":kiss:", layout= "wide")
+st.set_page_config(page_title = "Marriott Product Content Generator", page_icon = ":kiss:", layout= "wide")
 lotte_file = 'https://assets9.lottiefiles.com/packages/lf20_26KVdO.json'
 
 def load_lottee(lotte_file):
@@ -45,8 +45,8 @@ with st.container():
     left,right = st.columns(2)
 
     with left:
-        st.subheader('Textovator') 
-        st.title('Textovator')
+        st.subheader('Marriott Product Content Generator') 
+        #st.title('Marriott Product Content Generator')
         st.write('This tool will help you to genereate the property description and Title within seconds. Select the features that best represents the property. If features are not listed then please enter in "Other Details" section with a comma separated.')
     
     with right:
@@ -78,7 +78,7 @@ with st.container():
         if other_details:
             left_lst.append(other_details)
         left_selected_options_string = ', '.join(left_lst)
-        st.write(left_selected_options_string)
+        #st.write(left_selected_options_string)
     with center: 
         st.write('Please select the following options: ')
 #         woods = st.checkbox('In Woods')
