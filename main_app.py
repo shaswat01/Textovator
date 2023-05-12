@@ -137,6 +137,10 @@ with st.container():
                 st.session_state['past'] = []
             if 'messages' not in st.session_state:
                 st.session_state['messages'] = [
+                    
+                    
+                    
+
                     {"role": "system", "content": "You are a helpful assistant."} ]
             
             with st.form(key='my_form', clear_on_
@@ -146,5 +150,21 @@ with st.container():
 
 
 
+options = ['Option 1', 'Option 2', 'Option 3']
+
+# Create an empty list to store selected options
+selected_options = []
+
+# Display checkboxes for each option
+for option in options:
+    checkbox = st.checkbox(option)
+    if checkbox:
+        selected_options.append(option)
+
+# Convert the selected options to a string
+selected_options_string = ', '.join(selected_options)
+
+# Display the selected options as a string
+st.write('Selected options:', selected_options_string)
 
 
