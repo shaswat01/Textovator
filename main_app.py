@@ -47,7 +47,7 @@ with st.container():
     with left:
         st.subheader('Textovator') 
         st.title('Textovator')
-        st.write('Provide the below inputs - ')
+        st.write('This tool will help you to genereate the property description and Title within seconds. Selec the features that best represents your property. If there are not listed then please enter in "Other Details" section with a comma separated.')
     
     with right:
         st_lottie(animation_data=animation,height=300,key='coding')
@@ -64,7 +64,7 @@ with st.container():
         n_baths = st.text_input('Number of Bathrooms: ')
         n_beds = st.text_input('Number of Beds: ')
         n_city = st.text_input('Nearest major City: ')
-        other_details = st.text_input('Other Details(comma separated: ')
+        other_details = st.text_input('Other Details(comma separated): ')
         left_lst= []
         if n_bedrooms.isnumeric():
             
