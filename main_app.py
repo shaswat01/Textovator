@@ -58,10 +58,12 @@ with st.container():
     left,center,right = st.columns((1,2,2))
 
     with left:
-        n_beds = st.text_input('Number of Bedrooms: ')
+        n_bedrooms = st.text_input('Number of Bedrooms: ')
         n_baths = st.text_input('Number of Bathrooms: ')
         n_beds = st.text_input('Number of Beds: ')
         n_city = st.text_input('Nearest major City: ')
+        
+        
 
     with center: 
         st.write('Please select the following options: ')
@@ -105,7 +107,7 @@ with st.container():
         # Convert the selected options to a string
         right_selected_options_string = ', '.join(right_selected_val)
         
-    st.write(right_selected_options_string + center_selected_options_string)
+    st.write(right_selected_options_string + ', ' + center_selected_options_string,+ ', '+ , n_bedrooms,+ ', '+ ,n_baths,+ ', '+ ,n_beds,+ ', '+ ,n_city)
         
 with st.container():
 
