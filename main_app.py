@@ -62,8 +62,15 @@ with st.container():
         n_baths = st.text_input('Number of Bathrooms: ')
         n_beds = st.text_input('Number of Beds: ')
         n_city = st.text_input('Nearest major City: ')
-        
-        
+        left_lst= []
+        if n_bedrooms.isnumeric():
+            left_lst.append('Number of Bedrooms=',n_bedrooms)
+        if n_baths.isnumeric():
+            left_lst.append('Number of bathrooms=',n_baths)
+        if n_beds.isnumeric():
+            left_lst.append('Number of beds=',n_beds)
+        if n_city.isalpha():
+            left_lst.append('nearest city=',n_city)
 
     with center: 
         st.write('Please select the following options: ')
@@ -76,7 +83,7 @@ with st.container():
 #         bathtub = st.checkbox('Bathtub')
 #         pat =  st.checkbox('Patio/Balcony')
 #         pets = st.checkbox('Pets Allowed')
-        center_lst = ['In Woods','Close to Mountains']
+        center_lst = ['In Woods','Close to Mountains','Close To Woods','Sea Facing','A/C','Heating','Bathtub','Patio/Balcony','Pets Allowed']
         center_selected_val =[]
         for option in center_lst:
             checkbox = st.checkbox(option)
@@ -96,7 +103,7 @@ with st.container():
 #         kitchen = st.checkbox('Kitchen Essentials')
 #         prem = st.checkbox('Premium Linens and Towels')
 #         tv = st.checkbox('Television')
-        right_lst = ['Pool','Concierge Service']
+        right_lst = ['Pool','Concierge Service','Kids Amenities','Professinal Cleaning','High Speed Wifi','Kitchen Essentials','Premium Linens and Towels','Television']
     
         right_selected_val =[]
         for option in right_lst:
@@ -107,7 +114,7 @@ with st.container():
         # Convert the selected options to a string
         right_selected_options_string = ', '.join(right_selected_val)
         
-    st.write(right_selected_options_string + ', ' + center_selected_options_string + ', ' +  n_bedrooms+ ', '+ n_baths+ ', '+ n_beds+ ', '+ n_city)
+    st.write(right_selected_options_string + ', ' + center_selected_options_string + ', ' +  left_lst)
         
 with st.container():
 
