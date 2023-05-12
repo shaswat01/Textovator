@@ -164,6 +164,9 @@ with st.container():
         
     if submit_prompt:
         st.write(get_completion(prompt))
+        appr = st.button('Submit for Approval')
+        if appr:
+            st.success('Submitted for Approval!')
     if clear_button:
         st.experimental_rerun()
         
