@@ -1,1 +1,4 @@
 openai
+streamlit_chat
+streamlit_lottie
+requests
