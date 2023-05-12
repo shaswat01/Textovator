@@ -81,8 +81,8 @@ with st.container():
             if checkbox:
                 center_selected_val.append(option)
 
-    # Convert the selected options to a string
-    selected_options_string = ', '.join(center_selected_val)
+        # Convert the selected options to a string
+        selected_options_string = ', '.join(center_selected_val)
 
     with right:
         st.write("##")
