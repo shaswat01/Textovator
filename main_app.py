@@ -77,9 +77,9 @@ with st.container():
         center_lst = ['In Woods','Close to Mountains']
         center_selected_val =[]
         for option in center_lst:
-        checkbox = st.checkbox(option)
-        if checkbox:
-            center_selected_val.append(option)
+            checkbox = st.checkbox(option)
+                if checkbox:
+                    center_selected_val.append(option)
 
     # Convert the selected options to a string
     selected_options_string = ', '.join(center_selected_val)
@@ -98,9 +98,9 @@ with st.container():
     
         right_selected_val =[]
             for option in right_lst:
-            checkbox = st.checkbox(option)
-            if checkbox:
-                right_selected_val.append(option)
+                checkbox = st.checkbox(option)
+                    if checkbox:
+                        right_selected_val.append(option)
 
         # Convert the selected options to a string
         selected_options_string = ', '.join(right_selected_val)
@@ -167,17 +167,5 @@ with st.container():
                 user_input = st.text_area("You:", key='input', height=100)
                 submit_button = st.form_submit_button(label='Send')
 
-
-
-options = ['Option 1', 'Option 2', 'Option 3']
-
-# Create an empty list to store selected options
-selected_options = []
-
-# Display checkboxes for each option
-
-
-# Display the selected options as a string
-st.write('Selected options:', selected_options_string)
 
 
