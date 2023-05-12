@@ -34,24 +34,7 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
     # print('***********************************************************')
     return response.choices[0].message["content"]
 
-prompt = f"""
-You are an Assistant for text generation designed to help get \
-the text generated with given properties attributes delimited by ```.
 
-Instructions: 
-- Make the tone as Persuasive 
-- If the city details are present in the text, share some fun acitivities around that area \
-or a fun fact about the city in the property description.
-- Show the output JSON
-    - Property Description = Generate a detailed 600 words property description that highlights its unique features and appeals to \
-      potential renters.
-    - Headline = Generate a SEO and eye catching headline. 
-- If you're unsure of an answer, you can say "I don't know" or "I'm not sure". 
-
-- properties attributes: ```{prop_description}```
-"""
-key_per = st.write("password:", st.secrets["password"])
-openai.api_key = key_per
 # HEADER section
 
 with st.container():
@@ -127,5 +110,22 @@ with st.container():
                 user_input = st.text_area("You:", key='input', height=100)
                 submit_button = st.form_submit_button(label='Send')
 
+prop_description = ""
+prompt = f"""
+You are an Assistant for text generation designed to help get \
+the text generated with given properties attributes delimited by ```.
 
-          
+Instructions: 
+- Make the tone as Persuasive 
+- If the city details are present in the text, share some fun acitivities around that area \
+or a fun fact about the city in the property description.
+- Show the output JSON
+    - Property Description = Generate a detailed 600 words property description that highlights its unique features and appeals to \
+      potential renters.
+    - Headline = Generate a SEO and eye catching headline. 
+- If you're unsure of an answer, you can say "I don't know" or "I'm not sure". 
+
+- properties attributes: ```{prop_description}```
+"""
+key_per = st.write("password:", st.secrets["password"])
+openai.api_key = key_per
