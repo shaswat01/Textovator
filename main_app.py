@@ -142,7 +142,7 @@ with st.container():
     - Make the tone as Persuasive 
     - If the city details are present in the text, share some fun acitivities around that area \
     or a fun fact about the city in the property description.
-    - Show the output JSON
+    - Show the output
         - Property Description = Generate a detailed 600 words property description that highlights its unique features and appeals to \
           potential renters.
         - Headline = Generate a SEO and eye catching headline. 
@@ -150,7 +150,7 @@ with st.container():
 
     - properties attributes: ```{prop_description}```
     """  
-    st.write('value for the final prompt is ',prompt )
+    #st.write('value for the final prompt is ',prompt )
     with right:
         clear_button = st.button("Clear All", key="clear") 
         
