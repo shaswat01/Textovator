@@ -110,6 +110,7 @@ with st.container():
                 user_input = st.text_area("You:", key='input', height=100)
                 submit_button = st.form_submit_button(label='Send')
 
+
 prop_description = ""
 prompt = f"""
 You are an Assistant for text generation designed to help get \
@@ -127,5 +128,5 @@ or a fun fact about the city in the property description.
 
 - properties attributes: ```{prop_description}```
 """
-key_per = st.write("password:", st.secrets["password"])
-openai.api_key = key_per
+
+openai.api_key = st.secrets["password"]
