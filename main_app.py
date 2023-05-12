@@ -71,7 +71,7 @@ with st.container():
             left_lst.append(f"""Number of beds={n_beds}""")
         if n_city.isalpha():
             left_lst.append(f"""nearest city={n_city}""")
-
+        st.write(left_lst)
     with center: 
         st.write('Please select the following options: ')
 #         woods = st.checkbox('In Woods')
