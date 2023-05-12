@@ -12,7 +12,7 @@ from streamlit_lottie import st_lottie
 openai.api_key = st.secrets["password"]
 
 # Page config
-st.set_page_config(page_title = "Marriott Automated Generator for Novel and Engaging Text", page_icon = ":kiss:", layout= "wide")
+st.set_page_config(page_title = "Marriott Automated Generator for Novel and Engaging Text", page_icon = ":hotel:", layout= "wide")
 lotte_file = 'https://assets9.lottiefiles.com/packages/lf20_26KVdO.json'
 
 def load_lottee(lotte_file):
