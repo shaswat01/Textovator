@@ -56,7 +56,7 @@ with st.container():
         st.write('This tool will help you to genereate the property description and Title within seconds. Select the features that best represents the property. If features are not listed then please enter in "Other Details" section with a comma separated.')
     
     with right:
-        st_lottie(animation_data=animation,height=200,key='coding')
+        st_lottie(animation,height=200,key='coding')
 
 ## Body 
 
